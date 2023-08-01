@@ -1,0 +1,163 @@
+body {
+    background-color: rgb(143, 176, 159);
+    display: flex;
+}
+
+.timer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    font-size: 200px;
+}
+
+.btnChild { /*ISJALKSLKSDJ I CANT CENTER IT */
+    position: absolute;
+    top: 63%;
+    left: 47.5%;
+    justify-content: center;
+    text-align: center;
+}
+
+.settings { /*edit this to make it correct once icons are added*/
+    position: absolute;
+    top: 63%;
+    left: 60%;
+    justify-content: center;
+    text-align: center;
+}
+
+#startBtn {
+    font-size: 30px;
+}
+
+.timer ul {
+    display: flex;
+    justify-content: center;
+}
+
+.timer ul li {
+    list-style-type: none;
+    text-align: center;
+}
+
+.timer li.separator {
+    margin: 0 10px;
+    font-size: 200px;
+    line-height: 1;
+    color:black;
+}
+
+iframe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+}
+
+.sidebar {
+    height: 100%; 
+    width: 0px; 
+    position: absolute; 
+    z-index: 1; 
+    top: 0;
+    right: 0;
+    background-color: #f6fef8; 
+    overflow-x: hidden;
+    padding-top: 60px; 
+    transition: 0.5s; 
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 25px;
+}
+
+#openbtn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 15px;
+    margin-left: 50px;
+}
+
+.toDo {
+    position: absolute;
+    width: 250px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    /*text-align: center; */
+}
+
+#listHead {
+    text-align: center;
+}
+
+#inputTask {
+    width: 110px;
+}
+
+#listDiv {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.sidebar ul {
+    /*width: 200px;
+    /*padding: 0px 40px 0px 40px;*/
+}
+
+.sidebar ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 10px 40px 10px 20px;
+    user-select: none;
+    position: relative;
+    max-width: 200px;
+    cursor: pointer;
+    word-wrap: break-word;
+    /*account for long tasks */
+}
+
+#listDiv ul li::before{ /*the circles to check off*/
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    transform: translate(-35px, 0);
+    cursor: pointer;
+}
+
+#listDiv ul li.checked {
+    color: grey;
+    text-decoration: line-through;
+}
+
+#listDiv ul li.checked::before {
+    background-image: url(images/checked.png);
+}
+
+#listDiv ul li span {
+    position: absolute;
+    right: 0px;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: grey;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+#listDiv ul li span:hover {
+    background-color: rgb(241, 240, 240);
+}

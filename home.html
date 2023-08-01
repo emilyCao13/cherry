@@ -3,12 +3,55 @@
 <html>
     <head>
         <title>Cherry!</title>
-
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
-        <main>
+         <!--holding the timer-->
+        <div class="timer"> 
+            <ul>
+                <li><span id="minutes">25</span></li>
+                <li class="separator">:</li>
+                <li><span id="seconds">00</span></li>
+            </ul>
             
-        </main>
+        </div>
+
+        <div class="btnChild">
+            <!--start/stop button-->
+            <button type="button" id="startBtn" onClick="countdown">START</button>
+        </div>
+
+        <div class="settings">
+            <!--settings button-->
+            <button type="button" id="settingsBtn">Settings</button>
+        </div>
+
+        <!--spotify embed-->
+        <br>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1eINyBk0X9EOrOUZQFC1qA?utm_source=generator&theme=white" width="20%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" ></iframe>
+
+        <!--checklist of things to do-->
+        <div id="toDo" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+            <div id="listHead" >
+                <h2>To Do</h2>
+                <input type="text" id="inputTask" placeholder="">
+                <button onclick="newTask()" id="addBtn">+</button>
+            </div>
+            
+            <div id="listDiv">
+                <ul id="listContainer">
+                    <li class="checked">oki kewl</li>
+                    <li>why is this happening ihiuhihihiuhiuhiuhuihijuhuihiuhuiuhuihuh</li>
+                </ul>
+            </div>
+        </div>
+
+        <button id="openbtn" onclick="openNav()">&#9776; View To-Do List</button>
+       
+        
+        <script src="script.js"></script>
     </body>
 </html>
