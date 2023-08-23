@@ -30,32 +30,46 @@ document.getElementById("listContainer").addEventListener("click", function(e){
     }
 });
 
-var mins = document.getElementById("minutes");
-var secs = document.getElementById("seconds");
+//Figured out just reword and whatever
+var timeLimitInMinutes = 1;
+var timeLimitInSeconds = timeLimitInMinutes * 60;
+var timerElement = document.getElementById("time");
+var startButton = document.getElementById("startBtn");
+var stopButton = document.getElementById("stopBtn");
+var timerInterval;
 
 function countdown() {
-    const second = 1000;
-    const minute = second*60;
-    const hour = minute*60;
-    const total = 25;
-
-    const interval = setInterval(() => {
-        var seconds = 0;
-        var minutes = 0;
-        while (minutes <= 25) {
-            
-        }
-        mins.innerText = formatNums(Math.floor(total));
-        secs.innerText = formatNums(second % 60);
-    },1000)
+    startButton.onclick = alertMe();
+    startButton.hidden = true;
+    stopButton.hidden = false;
 }
 
-function formatNums(number) {
-    if (number < 10) {
-        return '0' + number;
-    } else {
-        return number;
+function stopTimer() {
+    clearInterval(timerInterval);
+    startButton.hidden = false;
+    stopButton.hidden = true;
+}
+
+function alertMe() {
+    timerInterval = setInterval(function(){
+        timeLimitInSeconds--;
+    var minutes = Math.floor(timeLimitInSeconds / 60);
+    var seconds = timeLimitInSeconds % 60;
+
+    if (timeLimitInSeconds < 0) {
+        timerElement.textContent = '00:00';
+        clearInterval(timerInterval);
+        return;
     }
+
+    if (minutes < 10) {
+        minutes = '0' + minutes;
+    }
+    if (seconds < 10) {
+        seconds = '0' + seconds;
+    }
+
+    timerElement.textContent = minutes + ':' + seconds;
+  },1000);
 }
 
-countdown()

@@ -1,5 +1,6 @@
 body {
-    background-color: rgb(143, 176, 159);
+    background-image: url(images/banks_of_the_seine\,_vetheuil_1963.10.177.jpg);
+    background-size: cover;
     display: flex;
 }
 
@@ -12,13 +13,7 @@ body {
     font-size: 200px;
 }
 
-.btnChild { /*ISJALKSLKSDJ I CANT CENTER IT */
-    position: absolute;
-    top: 63%;
-    left: 47.5%;
-    justify-content: center;
-    text-align: center;
-}
+
 
 .settings { /*edit this to make it correct once icons are added*/
     position: absolute;
@@ -30,23 +25,20 @@ body {
 
 #startBtn {
     font-size: 30px;
-}
-
-.timer ul {
-    display: flex;
+    position: absolute;
+    top: 63%;
+    left: 46%;
     justify-content: center;
-}
-
-.timer ul li {
-    list-style-type: none;
     text-align: center;
 }
 
-.timer li.separator {
-    margin: 0 10px;
-    font-size: 200px;
-    line-height: 1;
-    color:black;
+#stopBtn {
+    font-size: 30px;
+    position: absolute;
+    top: 63%;
+    left: 46%;
+    justify-content: center;
+    text-align: center;
 }
 
 iframe {
@@ -80,8 +72,9 @@ iframe {
 #openbtn {
     position: absolute;
     top: 15px;
-    right: 20px;
+    right: 15px;
     font-size: 15px;
+    padding: 10px 10px;
     margin-left: 50px;
 }
 
@@ -107,8 +100,8 @@ iframe {
 }
 
 .sidebar ul {
-    /*width: 200px;
-    /*padding: 0px 40px 0px 40px;*/
+    width: 200px;
+    padding: 0px 40px 0px 40px;
 }
 
 .sidebar ul li{

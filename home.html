@@ -8,18 +8,14 @@
 
     <body>
          <!--holding the timer-->
-        <div class="timer"> 
-            <ul>
-                <li><span id="minutes">25</span></li>
-                <li class="separator">:</li>
-                <li><span id="seconds">00</span></li>
-            </ul>
-            
+        <div class="timer" id="time"> 
+            25:00
         </div>
 
         <div class="btnChild">
             <!--start/stop button-->
-            <button type="button" id="startBtn" onClick="countdown">START</button>
+            <button onclick="countdown()" type="button" id="startBtn">START</button>
+            <button onclick="stopTimer()" type="button" id="stopBtn" hidden >STOP</button>
         </div>
 
         <div class="settings">
@@ -28,7 +24,6 @@
         </div>
 
         <!--spotify embed-->
-        <br>
         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1eINyBk0X9EOrOUZQFC1qA?utm_source=generator&theme=white" width="20%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" ></iframe>
 
         <!--checklist of things to do-->
