@@ -7,6 +7,16 @@
     </head>
 
     <body>
+        <!--Label-->
+        <div class="label" id="label">
+            <h1>POMODORO</h1>
+        </div>
+
+        <!--progress bar-->
+        <div class="progress">
+            <div id="progress">0%</div>
+        </div>
+
          <!--holding the timer-->
         <div class="timer" id="time"> 
             25:00
@@ -17,11 +27,34 @@
             <button onclick="countdown()" type="button" id="startBtn">START</button>
             <button onclick="stopTimer()" type="button" id="stopBtn" hidden >STOP</button>
         </div>
+        
+        <button type="button" id="restartBtn" onclick="reset()">Reset</button>
+        <button type="button" id="settingsBtn" onclick="openSet()">Settings</button>
+        <div class="settings" id="settings">
+            <a href="javascript:void(0)" class="closeSet" onclick="closeSet()">&times;</a>
+            <h2>Time in Minutes</h2>
+            
+            <div class="row">
+                <!--settings button-->
+                <div class="column">
+                    <label for="pomodoro">Pomodoro:</label>
+                    <input type="number" id="pomodoro" name="pomodoro" />
+                </div>
 
-        <div class="settings">
-            <!--settings button-->
-            <button type="button" id="settingsBtn">Settings</button>
+                <div class="column">
+                    <label for="shortbrk">Short Break:</label>
+                    <input type="number" id="shortbrk" name="shortbrk" />
+                </div>
+
+                <div class="column">
+                    <label for="longbrk">Long Break:</label>
+                    <input type="number" id="longbrk" name="longbrk" />
+                </div>        
+            </div>
+            <button type="button" id="submitSettings" onclick="applySet()">Apply</button>
+            <button type="button" id="defaultSettings" onclick="defaultSet()">Default</button>
         </div>
+
 
         <!--spotify embed-->
         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1eINyBk0X9EOrOUZQFC1qA?utm_source=generator&theme=white" width="20%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" ></iframe>

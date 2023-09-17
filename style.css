@@ -13,14 +13,92 @@ body {
     font-size: 200px;
 }
 
-
-
-.settings { /*edit this to make it correct once icons are added*/
+.label {
     position: absolute;
-    top: 63%;
-    left: 60%;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    font-size: 25px;
+}
+
+.progress {
+    position: absolute;
+    top: 36%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #333;
+    border-radius: 13px;
+    height: 20px;
+    width: 300px;
+    padding: 3px;
+}
+
+#progress{
+    background-color: orange;
+    width: 0%;
+    /* Adjust with JavaScript */
+    height: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.settings .closeSet {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 30px;
+    margin-left: 25px;
+}
+
+.row { 
+    display: flex;
+    -ms-flex-wrap: wrap; 
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+  
+.column {
+    flex: 0 0 auto;
+    width: 33%;
+}
+
+.settings label, .settings input {
+    display: block;
+}
+
+.settings input {
+    text-align: center;
+    margin-left: 40px;
+}
+
+#restartBtn {
+    position: absolute;
+    top: 64%;
+    left: 41%;
     justify-content: center;
     text-align: center;
+}
+
+#settingsBtn { /*edit this to make it correct once icons are added*/
+    position: absolute;
+    top: 64%;
+    left: 55%;
+    justify-content: center;
+    text-align: center;
+}
+
+.settings {
+    height: 0px; /* make both 0 when the function is written*/
+    width: 700px; 
+    position: absolute; 
+    z-index: 1; 
+    top: 70%;
+    right: 25%;
+    text-align: center;
+    background-color: #f6fef8; 
+    overflow-x: hidden;
+    transition: 0.5s; 
 }
 
 #startBtn {
