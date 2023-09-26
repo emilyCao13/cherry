@@ -3,23 +3,32 @@ body {
     background-size: cover;
     display: flex;
 }
-
+button {
+    background-color: hsla(130, 33%, 72%, 0.905); 
+    border-color: aliceblue;
+    border-radius: 15%;
+}
 .timer {
     position: absolute;
+    font-family: Optima, sans-serif;
+    font-weight: 600;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px;
     font-size: 200px;
+    color: rgb(23, 42, 23);
 }
 
 .label {
     position: absolute;
+    font-family: Optima, sans-serif;
     top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px;
     font-size: 25px;
+    color: rgb(36, 59, 36);
 }
 
 .progress {
@@ -27,22 +36,25 @@ body {
     top: 36%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #333;
+    background:hsla(135, 100%, 98%, 0.905); 
     border-radius: 13px;
     height: 20px;
     width: 300px;
     padding: 3px;
+    color: rgb(36, 59, 36);
+    font-family: Optima, sans-serif;
 }
 
 #progress{
-    background-color: orange;
+    background-color: hsla(131, 18%, 70%, 0.905); 
     width: 0%;
     /* Adjust with JavaScript */
+    font-family: Optima, sans-serif;
     height: 20px;
     border-radius: 10px;
     text-align: center;
 }
-
+ 
 .settings .closeSet {
     position: absolute;
     top: 0;
@@ -63,42 +75,14 @@ body {
     width: 33%;
 }
 
-.settings label, .settings input {
-    display: block;
-}
-
-.settings input {
-    text-align: center;
-    margin-left: 40px;
-}
-
 #restartBtn {
     position: absolute;
     top: 64%;
     left: 41%;
     justify-content: center;
+    font-size: 20px;
     text-align: center;
-}
-
-#settingsBtn { /*edit this to make it correct once icons are added*/
-    position: absolute;
-    top: 64%;
-    left: 55%;
-    justify-content: center;
-    text-align: center;
-}
-
-.settings {
-    height: 0px; /* make both 0 when the function is written*/
-    width: 700px; 
-    position: absolute; 
-    z-index: 1; 
-    top: 70%;
-    right: 25%;
-    text-align: center;
-    background-color: #f6fef8; 
-    overflow-x: hidden;
-    transition: 0.5s; 
+    font-family: Optima, sans-serif;
 }
 
 #startBtn {
@@ -108,6 +92,7 @@ body {
     left: 46%;
     justify-content: center;
     text-align: center;
+    font-family: Optima, sans-serif;
 }
 
 #stopBtn {
@@ -117,6 +102,7 @@ body {
     left: 46%;
     justify-content: center;
     text-align: center;
+    font-family: Optima, sans-serif;
 }
 
 iframe {
@@ -133,7 +119,7 @@ iframe {
     z-index: 1; 
     top: 0;
     right: 0;
-    background-color: #f6fef8; 
+    background-color: hsla(133, 42%, 83%, 0.905); 
     overflow-x: hidden;
     padding-top: 60px; 
     transition: 0.5s; 
@@ -145,10 +131,12 @@ iframe {
     right: 25px;
     font-size: 36px;
     margin-left: 25px;
+    color:rgb(23, 42, 23);
 }
 
 #openbtn {
     position: absolute;
+    font-family: Optima, sans-serif;
     top: 15px;
     right: 15px;
     font-size: 15px;
@@ -166,15 +154,25 @@ iframe {
 
 #listHead {
     text-align: center;
+
+}
+
+#listHead h2 {
+    color: rgb(36, 59, 36);
+    font-family: Optima, sans-serif;
 }
 
 #inputTask {
     width: 110px;
+    font-family: Optima, sans-serif;
+    
 }
 
 #listDiv {
     margin-left: 25px;
     margin-right: 25px;
+    color: rgb(36, 59, 36);
+    font-family: Optima, sans-serif;
 }
 
 .sidebar ul {
@@ -184,7 +182,7 @@ iframe {
 
 .sidebar ul li{
     list-style: none;
-    font-size: 17px;
+    font-size: 20px;
     padding: 10px 40px 10px 20px;
     user-select: none;
     position: relative;
@@ -192,6 +190,7 @@ iframe {
     cursor: pointer;
     word-wrap: break-word;
     /*account for long tasks */
+    font-family: Optima, sans-serif;
 }
 
 #listDiv ul li::before{ /*the circles to check off*/

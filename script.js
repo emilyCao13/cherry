@@ -3,18 +3,20 @@ var pomodoros = 0;
 var timerState = 0; //0 means full task length, 1 is short break, 2 is long break
 var fullTimer = 0;
 //variables for settings
-var taskTime = 25;
-var shortBreakTime = 5;
-var longBreakTime = 15;
+var taskTime = 1;
+var shortBreakTime = 1;
+var longBreakTime = 1;
 
 
 function openNav() {
     document.getElementById("toDo").style.width = "300px";
+    document.getElementById("openbtn").hidden = true;
 }
   
 /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
 function closeNav() {
     document.getElementById("toDo").style.width = "0";
+    document.getElementById("openbtn").hidden = false;
 }
 
 function openSet() {
@@ -26,12 +28,20 @@ function closeSet() {
 }
 
 function reset() {
-    timeLimitInSeconds = fullTimer*60;
-    clearInterval(timerInterval);
-    if (fullTimer < 10) {
-        fullTimer = '0' + fullTimer;
+    var resetAmount = 0;
+    if (timerState == 0) {
+        resetAmount = fullTimer;
+    } else if (timerState == 1) {
+        resetAmount = shortBreakTime;
+    } else {
+        resetAmount = longBreakTime;
     }
-    timerElement.textContent = fullTimer + ':00';
+    timeLimitInSeconds = resetAmount*60;
+    clearInterval(timerInterval);
+    if (resetAmount < 10) {
+        resetAmount = '0' + resetAmount;
+    }
+    timerElement.textContent = resetAmount + ':00';
     startButton.hidden = false;
     stopButton.hidden = true;
     
@@ -92,7 +102,8 @@ function countdown() {
                     timerState = 1;
                     document.getElementById("progress").style.width = "25%";
                     document.getElementById("progress").innerHTML = "25%";
-                    document.getElementById("label").innerHTML = "SHORT BREAK"
+                    document.getElementById("pomoLabel").hidden = true;
+                    document.getElementById("shortLabel").hidden = false;
                 } else if (pomodoros == 2) { //when finished second pomodoro
                     if (shortBreakTime < 10) {
                         timerElement.textContent = '0' + shortBreakTime + ':00';
@@ -102,7 +113,8 @@ function countdown() {
 
                     timeLimitInSeconds = shortBreakTime*60;
                     timerState = 1;
-                    document.getElementById("label").innerHTML = "SHORT BREAK"
+                    document.getElementById("pomoLabel").hidden = true;
+                    document.getElementById("shortLabel").hidden = false;
                     document.getElementById("progress").style.width = "50%";
                     document.getElementById("progress").innerHTML = "50%";
                 } else if (pomodoros == 3) { //when finished third pomodoro
@@ -114,7 +126,8 @@ function countdown() {
 
                     timeLimitInSeconds = shortBreakTime*60;
                     timerState = 1;
-                    document.getElementById("label").innerHTML = "SHORT BREAK"
+                    document.getElementById("pomoLabel").hidden = true;
+                    document.getElementById("shortLabel").hidden = false;
                     document.getElementById("progress").style.width = "75%";
                     document.getElementById("progress").innerHTML = "75%";
                 } else if (pomodoros== 4) { //if finished a full cycle, do long break
@@ -127,7 +140,8 @@ function countdown() {
                     timeLimitInSeconds = longBreakTime*60;
                     document.getElementById("progress").style.width = "100%";
                     document.getElementById("progress").innerHTML = "100%";
-                    document.getElementById("label").innerHTML = "LONG BREAK"
+                    document.getElementById("pomoLabel").hidden = true;
+                    document.getElementById("longLabel").hidden = false;
                     timerState = 2;
                     pomodoros = 0;
                 } 
@@ -139,7 +153,8 @@ function countdown() {
                 }
 
                 timeLimitInSeconds = taskTime*60;
-                document.getElementById("label").innerHTML = "POMODORO"
+                document.getElementById("pomoLabel").hidden = false;
+                document.getElementById("shortLabel").hidden = true;
                 timerState = 0;
             } else if (timerState == 2) { //just took a break, go back to pomodor time
                 if (taskTime < 10) {
@@ -149,7 +164,8 @@ function countdown() {
                 }
 
                 timeLimitInSeconds = taskTime*60;
-                document.getElementById("label").innerHTML = "POMODORO"
+                document.getElementById("pomoLabel").hidden = false;
+                document.getElementById("longLabel").hidden = true;
                 timerState = 0;
                 document.getElementById("progress").style.width = "0%";
                 document.getElementById("progress").innerHTML = "0%";
