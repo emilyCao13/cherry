@@ -3,9 +3,9 @@ var pomodoros = 0;
 var timerState = 0; //0 means full task length, 1 is short break, 2 is long break
 var fullTimer = 0;
 //variables for settings
-var taskTime = 1;
-var shortBreakTime = 1;
-var longBreakTime = 1;
+var taskTime = 25;
+var shortBreakTime = 5;
+var longBreakTime = 15;
 
 
 function openNav() {
