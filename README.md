@@ -4,6 +4,7 @@
 ---
 ## The development process:
 The idea for this project was created in late July 2023 as a way for me to self-learn and practice web-development skills using HTML, CSS, and Javascript.
+The name was inspired by cherry tomatoes 🍒🍅.
 The main functionings of the timer and to-do list were finished in mid-September 2023, with plans for further improvements over time.
 As of now, this application is able to be used for pomodoro studying or working, as well as the to-do list to keep track of your tasks!
 
